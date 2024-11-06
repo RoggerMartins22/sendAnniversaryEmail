@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 from FunctionsSpreadsheet.createSpreadsheet import verify_spreadsheet_exists
 from FunctionsMails.sendEmail import sendEmail
-os.system("clear")
+os.system("cls")
 verify_spreadsheet_exists()
 
 df = pd.read_excel("aniversarios.xlsx")
