@@ -18,6 +18,8 @@ if not aniversariantes.empty:
     for pessoa in aniversariantes_dict:
         nome = pessoa['Nome']
         email = pessoa['Email']
+else:
+    print("Nenhum aniversariante encontrado para o dia de hoje.")
 
 for pessoa in aniversariantes_dict:
         print(f"Nome: {pessoa['Nome']}, Email: {pessoa['Email']}")
