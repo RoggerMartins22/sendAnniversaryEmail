@@ -1,7 +1,8 @@
 import pandas as pd
 import os
 from datetime import datetime
-from createSpreadsheet import verify_spreadsheet_exists
+from FunctionsSpreadsheet.createSpreadsheet import verify_spreadsheet_exists
+from FunctionsMails.sendEmail import sendEmail
 os.system("clear")
 verify_spreadsheet_exists()
 
@@ -18,6 +19,7 @@ if not aniversariantes.empty:
     for pessoa in aniversariantes_dict:
         nome = pessoa['Nome']
         email = pessoa['Email']
+        sendEmail(nome, email)
 else:
     print("Nenhum aniversariante encontrado para o dia de hoje.")
 
