@@ -1,7 +1,9 @@
 import pandas as pd
 import os
 from datetime import datetime
+from createSpreadsheet import verify_spreadsheet_exists
 os.system("clear")
+verify_spreadsheet_exists()
 
 df = pd.read_excel("aniversarios.xlsx")
 df['DataNascimento'] = pd.to_datetime(df['DataNascimento'], dayfirst=True)
