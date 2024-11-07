@@ -18,3 +18,15 @@ def generate_spreadsheet():
     df.to_excel('Spreadsheets/alunos_aniversariantes.xlsx', index=False)
     df.to_excel('Spreadsheets/prof_aniversariantes.xlsx', index=False)
     print("Planilhas criadas com sucesso!")
+
+
+def create_log_if_not_exist():
+    try:
+        pd.read_excel('Spreadsheets/enviados.xlsx')
+    except FileNotFoundError:
+        dados_vazios = {
+        'Email': [],
+        'DataEnvio': []
+        }
+        log_df = pd.DataFrame(dados_vazios)
+        log_df.to_excel('Spreadsheets/enviados.xlsx', index=False)
