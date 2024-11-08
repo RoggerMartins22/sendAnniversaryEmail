@@ -1,6 +1,16 @@
 import pandas as pd
 import os
 
+
+def verify_folder():
+    if not os.path.exists('Spreadsheets'):
+        try:
+            os.makedirs('Spreadsheets', exist_ok=True)
+            print(f"Pasta '{'Spreadsheets'}' criada com sucesso!")
+        except Exception as e:
+            print(f"Erro ao criar a pasta: {e}")
+
+
 def verify_spreadsheet_exists():
     if not os.path.exists('Spreadsheets/alunos_aniversariantes.xlsx') and  not os.path.exists('Spreadsheets/prof_aniversariantes.xlsx'):
         generate_spreadsheet()
