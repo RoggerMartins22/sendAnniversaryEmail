@@ -29,6 +29,7 @@ def birthday_students():
                 print("Alunos:")
                 print(f"E-mail já enviado para {email} hoje!")
     else:
+        print("Alunos:")
         print("Nenhum aniversariante encontrado para o dia de hoje.")
 
 def birthday_teacher():
@@ -56,4 +57,5 @@ def birthday_teacher():
                 print("Professores:")
                 print(f"E-mail já enviado para {email} hoje!")
     else:
+        print("Professores:")
         print("Nenhum aniversariante encontrado para o dia de hoje.")
