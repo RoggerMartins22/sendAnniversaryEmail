@@ -9,9 +9,7 @@ def birthday_students():
     df['DataNascimento'] = pd.to_datetime(df['DataNascimento'], dayfirst=True)
 
     aniversariantes = df[(df['DataNascimento'].dt.month == hoje.month) & (df['DataNascimento'].dt.day == hoje.day)]
-
     aniversariantes_dict = aniversariantes.to_dict(orient='records')
-
 
     if not aniversariantes.empty: 
         for pessoa in aniversariantes_dict:
@@ -37,9 +35,7 @@ def birthday_teacher():
     df['DataNascimento'] = pd.to_datetime(df['DataNascimento'], dayfirst=True)
 
     aniversariantes = df[(df['DataNascimento'].dt.month == hoje.month) & (df['DataNascimento'].dt.day == hoje.day)]
-
     aniversariantes_dict = aniversariantes.to_dict(orient='records')
-
 
     if not aniversariantes.empty: 
         for pessoa in aniversariantes_dict:

@@ -14,7 +14,6 @@ def sendEmailStudent(nome, email):
     subject = 'Feliz Aniversário!'
     body = returnBirthdayStudentEmailBody(nome)
 
-
     message = MIMEMultipart()
     message["From"] = sender_email
     message["To"] = receive_email
@@ -36,7 +35,6 @@ def sendEmailStudent(nome, email):
     finally:
         server.quit()
 
-
 def sendEmailTeacher(nome, email):
         
     server_smtp = conexao
@@ -46,7 +44,6 @@ def sendEmailTeacher(nome, email):
     receive_email = email
     subject = 'Feliz Aniversário!'
     body = returnBirthdayTeacherEmailBody(nome)
-
 
     message = MIMEMultipart()
     message["From"] = sender_email

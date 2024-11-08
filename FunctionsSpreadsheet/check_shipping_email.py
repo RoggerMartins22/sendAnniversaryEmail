@@ -2,7 +2,6 @@ import pandas as pd
 from datetime import datetime
 from FunctionsSpreadsheet.createSpreadsheet import create_log_if_not_exist
 
-
 def check_shipping_today(email):
     create_log_if_not_exist()
 
@@ -11,7 +10,6 @@ def check_shipping_today(email):
     
     log_df["DataEnvio"] = pd.to_datetime(log_df["DataEnvio"]).dt.date
     return ((log_df["Email"] == email) & (log_df["DataEnvio"] == hoje)).any()
-
 
 def register_submission(email):
 

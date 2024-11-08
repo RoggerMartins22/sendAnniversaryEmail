@@ -26,7 +26,6 @@ def returnBirthdayStudentEmailBody(nome):
     """
     return body
 
-
 def returnBirthdayTeacherEmailBody(nome):
     body = f"""
     <html>
