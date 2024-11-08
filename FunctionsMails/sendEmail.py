@@ -64,7 +64,7 @@ def sendEmailTeacher(nome, email):
         server.starttls()
         server.login(sender_email, password)
         server.sendmail(sender_email, receive_email, message.as_string())
-    except Exception:
-        print("Erro: Endereço de E-mail Inválido")
+    except Exception as e:
+        print(f"Falha ao enviar e-mail para {email} - Erro: {str(e)}")
     finally:
         server.quit()
