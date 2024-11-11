@@ -12,19 +12,17 @@ def birthday_students():
     aniversariantes_dict = aniversariantes.to_dict(orient='records')
 
     if not aniversariantes.empty: 
+        print("Alunos:")
         for pessoa in aniversariantes_dict:
             nome = pessoa['Nome']
             email = pessoa['Email']
             if not check_shipping_today(email):
                 sendEmailStudent(nome, email)
-
-                print("Alunos:")
-                for pessoa in aniversariantes_dict:
-                    print(f"Nome: {pessoa['Nome']}, Email: {pessoa['Email']}")
-                    
                 register_submission(email)
+
+                print(f"Nome: {pessoa['Nome']} - Email: {pessoa['Email']}")
+                    
             else:
-                print("Alunos:")
                 print(f"E-mail já enviado para {email} hoje!")
     else:
         print("Alunos:")
@@ -38,19 +36,17 @@ def birthday_teacher():
     aniversariantes_dict = aniversariantes.to_dict(orient='records')
 
     if not aniversariantes.empty: 
+        print("Professores:")
         for pessoa in aniversariantes_dict:
             nome = pessoa['Nome']
             email = pessoa['Email']
             if not check_shipping_today(email):
                 sendEmailTeacher(nome, email)
-
-                print("Professores:")
-                for pessoa in aniversariantes_dict:
-                    print(f"Nome: {pessoa['Nome']}, Email: {pessoa['Email']}")
-
                 register_submission(email)
+
+                print(f"Nome: {pessoa['Nome']} - Email: {pessoa['Email']}")
+
             else:
-                print("Professores:")
                 print(f"E-mail já enviado para {email} hoje!")
     else:
         print("Professores:")

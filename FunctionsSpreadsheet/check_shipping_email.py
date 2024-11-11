@@ -1,9 +1,7 @@
 import pandas as pd
 from datetime import datetime
-from FunctionsSpreadsheet.createSpreadsheet import create_log_if_not_exist
 
 def check_shipping_today(email):
-    create_log_if_not_exist()
 
     hoje = datetime.now().date()
     log_df = pd.read_excel('Spreadsheets/enviados.xlsx')
@@ -14,5 +12,10 @@ def check_shipping_today(email):
 def register_submission(email):
 
     hoje = datetime.now().date()
+    diretorio = ('Spreadsheets/enviados.xlsx')
+    
+    log_df = pd.read_excel(diretorio)
     novo_registro = pd.DataFrame({"Email": [email], "DataEnvio": [hoje]})
-    novo_registro.to_excel('Spreadsheets/enviados.xlsx', index=False)
+    log_df = pd.concat([log_df, novo_registro], ignore_index=True)
+    
+    log_df.to_excel(diretorio, index=False)

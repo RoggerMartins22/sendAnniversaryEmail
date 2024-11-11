@@ -28,12 +28,12 @@ def generate_spreadsheet():
     print("Planilhas criadas com sucesso!")
 
 def create_log_if_not_exist():
-    try:
-        pd.read_excel('Spreadsheets/enviados.xlsx')
-    except FileNotFoundError:
+    if not os.path.exists('Spreadsheets/enviados.xlsx'):
         dados_vazios = {
             'Email': [],
             'DataEnvio': []
         }
         log_df = pd.DataFrame(dados_vazios)
         log_df.to_excel('Spreadsheets/enviados.xlsx', index=False)
+    else:
+        print("Registrando...")
